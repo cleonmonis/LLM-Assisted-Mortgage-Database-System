@@ -1,17 +1,44 @@
 ## README file
 -------------------------
-Harsh Borkhetaria hpb34
-Cleon Monis cvm53
-Sameel Arif sma369
-Saanvi Pandey sp2404
+# LLM-Assisted Mortgage Database System
 
-Harsh - implemented the ilab_script.py component and Postgres database connections, and helped with the SSH tunnel functionality between the local environment and iLab.
-Cleon - created the database_llm.py program, brought together all project components, played with the LLM to get it to work, testing, and created the project demonstration video.
-Sameel - created the schema.sql file, helped Cleon find queries for the LLM and tweak it
-Saanvi - created the create_database.sql script with the sample data and helped fine tune SQL responses for LLM and helped created additional test queries.
+This project integrates a PostgreSQL mortgage application database with a locally hosted Large Language Model (LLM) to support natural language queries. It enables analysis of loan approvals, demographic patterns, and geographic trends using both structured SQL and unstructured queries.
 
-The most challenging thing for us had to be figuring out what the errors that came up with a lot of the queries that we orginally selected. Our Project 1 database had some errors and some data that didn't get transferred and that it wouldn't come up or that the schema was not working properly. It took us a long time to get a schema that was working, that would answer the questions we were asking and also wouldn't cause any errors. 
+## Team Members
 
-What we found interesting was just using the local llm and messing around with it and how it would give different answers sometimes based on the size of the context window that you gave it and even with the instructions it would respond in separate ways. Also just doing the tunnel to the ilab database worked really well and our coordination with the online llm Claude and the local llm and our code was a great learning experience.
+- Harsh Borkhetaria — ilab script, Postgres connection, SSH tunneling  
+- Cleon Monis — LLM integration, orchestration, testing, video demo  
+- Sameel Arif — Schema design, query refinement  
+- Saanvi Pandey — Database creation script, test queries, query tuning
 
-Yes we implemented the extra credit part as well. 
+## Features
+
+- Structured relational database for mortgage data with normalized schema
+- Integration with a local LLM to interpret and execute natural language queries
+- Python scripts to manage SSH tunneling and interact with the database
+- Sample dataset and SQL schema included for testing and demonstration
+
+## Technologies
+
+- PostgreSQL  
+- Python  
+- Large Language Model (local)  
+- SSH tunneling (via iLab)
+
+## Setup and Usage
+
+1. Run `create_database.sql` to build the schema and populate tables with sample data.
+2. Use `ilab_script.py` to establish an SSH tunnel with the remote Postgres server.
+3. Run `database_llm.py` to interact with the database via LLM-driven queries.
+
+## Insights Enabled
+
+- Loan approval rates by agency, income level, or geography  
+- Common reasons for loan denial across counties  
+- Demographic breakdown of applicants and approval likelihood  
+- Natural language exploration of patterns without writing SQL
+
+## Notes
+
+- Minor issues were encountered in edge cases around null applicant fields.
+- Queries work best when schema context is provided clearly to the LLM.
